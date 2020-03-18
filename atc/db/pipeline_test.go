@@ -217,6 +217,19 @@ var _ = Describe("Pipeline", func() {
 		})
 	})
 
+	Describe("Archive", func() {
+		JustBeforeEach(func() {
+			pipeline.Archive()
+		})
+
+		It("archives the pipeline", func() {
+			pipeline.Reload()
+			Expect(pipeline.Archived()).To(BeTrue(), "pipeline was not archived")
+		})
+
+		// TODO: should we describe error handling, like if the pipeline is deleted before you archive it?
+	})
+
 	Describe("Unpause", func() {
 		JustBeforeEach(func() {
 			Expect(pipeline.Unpause()).To(Succeed())
@@ -232,6 +245,7 @@ var _ = Describe("Pipeline", func() {
 			})
 
 			It("unpauses the pipeline", func() {
+				pipeline.Reload()
 				Expect(pipeline.Paused()).To(BeFalse())
 			})
 		})
