@@ -1,6 +1,7 @@
 module WelcomeCardTests exposing (all, hasWelcomeCard)
 
 import Application.Application as Application
+import Assets
 import Common exposing (defineHoverBehaviour)
 import Concourse.Cli as Cli
 import DashboardTests exposing (apiData, darkGrey, givenDataAndUser, givenDataUnauthenticated, iconSelector, userWithRoles, whenOnDashboard)
@@ -251,7 +252,7 @@ hasWelcomeCard setup =
                             ]
                                 ++ iconSelector
                                     { size = "32px"
-                                    , image = "apple-logo.svg"
+                                    , image = Assets.CliIcon Cli.OSX
                                     }
                         }
                     , hoverable =
@@ -264,7 +265,7 @@ hasWelcomeCard setup =
                             ]
                                 ++ iconSelector
                                     { size = "32px"
-                                    , image = "apple-logo.svg"
+                                    , image = Assets.CliIcon Cli.OSX
                                     }
                         }
                     }
@@ -283,7 +284,7 @@ hasWelcomeCard setup =
                             ]
                                 ++ iconSelector
                                     { size = "32px"
-                                    , image = "windows-logo.svg"
+                                    , image = Assets.CliIcon Cli.Windows
                                     }
                         }
                     , hoverable =
@@ -296,7 +297,7 @@ hasWelcomeCard setup =
                             ]
                                 ++ iconSelector
                                     { size = "32px"
-                                    , image = "windows-logo.svg"
+                                    , image = Assets.CliIcon Cli.Windows
                                     }
                         }
                     }
@@ -315,7 +316,7 @@ hasWelcomeCard setup =
                             ]
                                 ++ iconSelector
                                     { size = "32px"
-                                    , image = "linux-logo.svg"
+                                    , image = Assets.CliIcon Cli.Linux
                                     }
                         }
                     , hoverable =
@@ -328,7 +329,7 @@ hasWelcomeCard setup =
                             ]
                                 ++ iconSelector
                                     { size = "32px"
-                                    , image = "linux-logo.svg"
+                                    , image = Assets.CliIcon Cli.Linux
                                     }
                         }
                     }
